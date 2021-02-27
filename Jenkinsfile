@@ -8,6 +8,7 @@ pipeline{
         stage('Load balancer'){
             steps{
             sh "ls -la"
+            sh "pwd"
             }
         }
     }
