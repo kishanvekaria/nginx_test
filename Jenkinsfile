@@ -10,8 +10,7 @@ pipeline{
             sh "ls -la"
             sh "pwd"
             sh "scp /home/jenkins/.jenkins/workspace/test_nginx/nginx.conf jenkins@35.222.180.87:nginx.conf"
-            sh "ssh -i ./ssh/id_rsa 35.222.180.87"
-            sh "docker run -d -p 80:80 --name nginx-loadbalancer --mount type=bind,source=/home/jenkins/nginx.conf,target=/etc/nginx/nginx.conf nginx:alpine"
+            sh "ssh -i ./ssh/id_rsa 35.222.180.87 && docker run -d -p 80:80 --name nginx-loadbalancer --mount type=bind,source=/home/jenkins/nginx.conf,target=/etc/nginx/nginx.conf nginx:alpine"
 
             }
         }
