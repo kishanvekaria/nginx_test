@@ -10,6 +10,7 @@ pipeline{
             sh "ls -la"
             sh "pwd"
             sh "ssh -i ./ssh/id_rsa 35.222.180.87"
+            sh "sudo su jenkins"
             sh "scp /home/jenkins/.jenkins/workspace/test_nginx/nginx.conf jenkins@35.222.180.87:nginx.conf"
             }
         }
